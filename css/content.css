@@ -1,0 +1,153 @@
+
+.sidebar {
+	height: 200px;
+	width: 150px;
+	position: -webkit-sticky; /* for Safari users */
+	position: sticky;
+	background: transparent;
+	top: 90px;
+	float: left;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.contents {
+	padding-left: 10px;
+	margin: 10px;
+	border: 1px dashed var(--lightgray);
+}
+
+.sidebar ul {
+	padding: 0;
+	margin: 0;
+	padding-left: 40px;
+}
+
+.sidebar ul li {
+	list-style-type: lower-roman;
+	color: var(--lightgray);
+}
+
+.sidebar a {
+	padding: 0;
+	margin: 0;
+	color: var(--lightgray);
+	transition: var(--trans-03);
+}
+
+.sidebar a.active {
+	color: var(--color-primary);
+	opacity: .7;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar a:hover {
+	color: var(--lightergrey);
+}
+
+.sidebar a:after {
+	background: none;
+}
+
+.sidebar li.active {
+	padding: 0;
+	margin: 0;
+	color: var(--color-primary);
+}
+
+.sidebar a.active {
+	color: var(--color-primary);
+	opacity: .8;
+}
+
+.sidebar a.active:hover {
+	opacity: 1;
+}
+
+.sidebar h3 {
+	padding: 0;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 0;
+	color: var(--lightgray);
+}
+
+.sidebar h4 {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.content {
+	margin-left: 160px; /* Same as the width of the sidebar */
+	padding: 0px 10px;
+	text-indent: 30px;
+}
+
+code span {
+	font-family: 'JetBrains Mono', serif;
+}
+
+code {
+	font-family: 'JetBrains Mono', serif;
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	.contents ul li {
+		margin-left: 0;
+		padding: 0;
+		text-indent: 0;
+		margin: 0;
+	}
+
+	.content {
+		margin-left: 0;
+		text-indent: 0;
+	}
+
+	.sidebar ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	.sidebar ul li {
+		list-style-type: lower-greek;
+		color: var(--lightgray);
+		padding: 0;
+		margin: 0;
+	}
+
+	.sidebar {
+		float: none;
+		transition: var(--trans-03);
+		transform: translateX(calc(-100% - 50px))
+	}
+
+	.sidebar.opened {
+		position: sticky;
+		top: 0;
+		transform: translateX(0);
+		top: 110px;
+		z-index: 99999;
+		border-radius: 10px;
+		background: var(--header-background);
+		border: 1px solid var(--gray);
+		width: calc(100% - 50px);
+		padding-left: 45px;
+		height: calc(100vh - 130px);
+		backdrop-filter: blur(6px);
+	}
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="carbon_colors">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RustyByte</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Oranienbaum&family=PT+Mono&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/root.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/content.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/gruvbox.css">
+	<script src="js/highlight.min.js"></script>
+</head>
+<body>
+	<div class="progress" id="scrollIndicator"></div>
+
+	<header id="header" class="header">
+		<a href="#"><h1>RustyByte</h1></a>
+
+		<nav class="headermenu">
+			<a href="#about">О проекте</a>
+			<a href="#introduction">Введение</a>
+			<a href="#repos">Репозитории</a>
+			<a href="#links">Ссылки</a>
+		</nav>
+
+		<button class="burger__btn">
+			<span></span><span></span><span></span>
+		</button>
+	</header>
+		
+	
+	<div class="container">
+		<div class="introduction">
+			<h1 class="title">RustyByte</h1>
+			<h1 class="subtitle">Русскоязычный ресурс</h1>
+			<h1 class="subtitle">для изучения Rust</h1>
+			<p class="bottom-text">created by <a href="https://github.com/alexeev-prog">alexeev-prog</a></p>
+		</div>
+
+		<div class="sidebar">
+			<h3>Main</h3>
+			<ul>
+				<li class="active"><a href="/" class="active"><h4>Home</h4></a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="contents">
+				<h3>Contents</h3>
+				<ul>
+					<li><a href="#about">О проекте</a></li>
+					<li><a href="#introduction">Введение</a></li>
+					<li><a href="#repos">Репозитории</a></li>
+					<li><a href="#links">Ссылки</a></li>
+				</ul>
+			</div>
+			<div id="about">
+				<h2 class="section-title">О проекте</h2>
+				<p>RustyByte создан для популяризации языка Rust в русскоязычном сегменте. Цель проекта - это рассказывать людям о Rust, побуждать их к написанию проектов на этом языке и увеличении числа вакансий.</p>
+			</div>
+			<div id="introduction">
+				<h2 class="section-title">Введение</h2>
+				<p>Rust - это язык программирования (более низкого уровня, чем высокого).</p>
+				<p>Отличительные его особенности: это защита от утечки памяти и безопасность, возможность предотвращения недопустимого доступа к данным в ходе компиляции.</p>
+				<p>Rust рассматривается как язык системного программирования, но многие применяют его к разным областям.</p>
+				<p>В rust-программах отсутствуют следующие проблемы:</p>
+
+				<ul>
+					<li>1. Висячие указатели - прямые ссылки на данные, ставшие недействительными.</li>
+					<li>2. Состояние гонки - неспособность из-за изменения внешних факторов определить, как программа будет вести себя от запуску к запуску.</li>
+					<li>3. Переполнение буфера - попытка обращения к элементу вне ряда. например к 12 элементу массива из 6 элементов.</li>
+					<li>4. Недействительность итератора - проблема, вызываемая проходом какого-то объекта-итератора, претерпевшего изменение уже в ходе итерации.</li>
+				</ul>
+			</div>
+			<div id="repos">
+				<h2 class="section-title">Репозитории</h2>
+				<p>Репозитории, относящиеся к данному проекту.</p>
+				
+				<ul class="custom_ul">
+					<li><a href="https://github.com/alexeev-prog/rustynotes">RustyNotes</a> - записки о Rust</li>
+				</ul>
+			</div>
+			<div id="links">
+				<h2 class="section-title">Ссылки</h2>
+				<p>Данный раздел постоянно пополняется, присылайте свои предложения в <a href="https://github.com/alexeev-prog/rustybyte_site">репозиторий сайта</a>.</p>
+
+				<ul class="custom_ul">
+					<li><a href="https://github.com/alexeev-prog/rustynotes">RustyNotes</a> - записки о Rust</li>
+					<li><a href="https://doc.rust-lang.ru/book/title-page.html">Язык программирования Rust</a> - книга на русском</li>
+					<li><a href="https://metanit.com/rust/tutorial/1.1.php">Уроки по Rust</a> - от metanit</li>
+				</ul>				
+			</div>
+		</div>
+
+		<footer>
+			<p>powered by <a href="https://github.com/alexeev-prog/zerobyte.css">zerobyte.css</a></p>
+		</footer>
+	</div>
+
+	<script>hljs.highlightAll();</script>
+	<script src="js/script.js"></script>
+
+</body>
+</html>
