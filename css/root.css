@@ -165,13 +165,16 @@ html {
 }
 
 .color-button {
-	background: #f4f4f4;
-	color: #111111;
 	cursor: pointer;
 	transition: var(--trans-03);
 	padding: 10px;
 	border-radius: 10px;
 	font-family: 'JetBrains Mono', monospace;
+}
+
+.color-button.carbon {
+	background: #f4f4f4;
+	color: #111111;
 }
 
 .color-button.catppuccin {
@@ -194,7 +197,7 @@ html {
 	color: #1d2021;
 }
 
-.color-button:hover {
+.color-button.carbon:hover {
 	background: #111111;
 	color: #f4f4f4;
 }
