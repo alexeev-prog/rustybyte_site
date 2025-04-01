@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="carbon_colors">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RustyByte</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Oranienbaum&family=PT+Mono&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/root.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/content.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/gruvbox.css" id="theme-link">
+	<script src="js/highlight.min.js"></script>
+</head>
+<body>
+	<div class="progress" id="scrollIndicator"></div>
+
+	<header id="header" class="header">
+		<a href="#"><h1>RustyByte</h1></a>
+
+		<nav class="headermenu">
+			<a href="#start">Определение переменных и вызов функций</a>
+		</nav>
+
+		<button class="burger__btn">
+			<span></span><span></span><span></span>
+		</button>
+	</header>
+		
+	
+	<div class="container">
+		<div class="introduction">
+			<h1 class="title">RustyByte</h1>
+			<h1 class="subtitle">Русскоязычный ресурс</h1>
+			<h1 class="subtitle">для изучения Rust</h1>
+			<p class="bottom-text">created by <a href="https://github.com/alexeev-prog">alexeev-prog</a></p>
+		</div>
+
+		<div class="sidebar">
+			<h3>Main</h3>
+			<ul>
+				<li class="active"><a href="/"><h4>Главная</h4></a></li>
+				<li class="active"><a href="./variables.html" class="active"><h4>Переменные</h4></a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="contents">
+				<h3>Contents</h3>
+				<ul>
+					<li><a href="#start">Определение переменных и вызов функций</a></li>
+				</ul>
+			</div>
+			<div id="start">
+				<h2 class="section-title">Определение переменных и вызов функций</h2>
+				<p>Взглянем на следующий код:</p>
+                <pre><code class="language-rust">
+fn main() {
+    let a = 10;
+    let b: i32 = 20;
+    let c = 30i32;
+    let d = 30_i32;
+    let e = add(add(a, b), add(c, d));
+
+    println!("(a + b) + (c + d) = {}", e);
+}
+
+fn add(i: i32, j: i32) -> i32 {
+    i + j;
+}                    
+                </code></pre>
+                <p>Определение функции начинается с ключевого слова <code>fn</code>. Точка входа в Rust-программы - это функция main. Она не получает никаких аргументов и не возвращает никаких значений.</p>
+<p>В следующих строках let используется для привязки переменной. По умолчанию переменные неизменяемые, то есть предназначены только для чтения, а не для чтения-записи.</p>
+<p>Также можно указывать конкретный тип данных разными способами:</p>
+<ol>
+<li>Через двоеточие</li>
+<li>Числовые литералы могут включать аннотации типов</li>
+</ol>
+<p>В последней строке вызывается макрос <code>println!</code> для вывода текста.</p>
+<p>В строках используются двойные, а не одинарные кавычки, а для символах используются одинарные.</p>
+<p>И наконец, функция add имеет аргументы с указанными типами данных и возвращает нужный тип данных. Как вы видите, возврат значения происходит автоматически, для этого не используются ключевые слова по типу <code>return</code>.</p>
+<p>Поговорим о создании переменных. В Rust они бывают <em>мутабельными</em> (mutable) или <em>немутабельными</em> (unmutable), то есть изменяемые и неизменяемые. Неизменяемые переменные можно сравнить с константами.</p>
+<p>Разберем пример:</p>
+<pre><code class="language-rust">
+fn main() {
+    let a = 10;
+    a = 15;
+}
+</code></pre>
+<p>Если мы скомпилируем данную программу, то получим ошибку:</p>
+<pre><code>
+    error[E0384]: cannot assign twice to immutable variable `a`
+--> src\main.rs:25:5
+ |
+24 |     let a = 10;
+ |         - first assignment to `a`
+25 |     a = 2;
+ |     ^^^^^ cannot assign twice to immutable variable
+ |
+help: consider making this binding mutable
+ |
+24 |     let mut a = 10;
+ |         +++
+</code></pre>
+<p>Т.к. все переменные в rust изначально неизменяемые, то мы не можем изменить переменную. Компилятор нам подсказывает, что для изменения значений надо добавить ключевое слово mut.</p>
+<p>Добавим:</p>
+<pre><code class='language-rust'>
+fn main() {
+	let mut a = 10;
+	a = 15;
+	println!(a);
+}
+</code></pre>
+<p>Программа успешно скомпилируется и мы получим 15.</p>
+<p>Но также существуют константы. Подобно неизменяемым переменным, константы — это значения, которые связаны с именем и не могут изменяться, но между константами и переменными есть несколько различий. Во-первых, нельзя использовать `mut` с константами. Константы не просто неизменяемы по умолчанию — они неизменяемы всегда. Для объявления констант используется ключевое слово const вместо let, а также тип значения должен быть указан в аннотации.</p>
+<pre><code class='language-rust'>
+fn main() {
+	const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+}
+</code></pre>
+<p>Имя константы - THREE_HOURS_IN_SECONDS, а её значение устанавливается как результат умножения 60 (количество секунд в минуте) на 60 (количество минут в часе) на 3 (количество часов, которые нужно посчитать в этой программе). Соглашение Rust для именования констант требует использования всех заглавных букв с подчёркиванием между словами. Компилятор может вычислять ограниченный набор операций во время компиляции, позволяющий записать это значение более понятным и простым для проверки способом, чем установка этой константы в значение 10 800.</p>
+<p>Константы существуют в течение всего времени работы программы в пределах области, в которой они были объявлены. Это свойство делает константы полезными для значений в домене вашего приложения, о которых могут знать несколько частей программы, например, максимальное количество очков, которое может заработать любой игрок в игре, или скорость света.</p>
+<p>Еще момент - в листингах выше мы не декларировали тип данных переменных.</p>
+<p>Вообще, типизация в Rust несет полу строгий характер. Разработчик может не указывать тип данных. Это может укоротить код, если сама программа небольшая. Но всегда рекомендуется описывать тип данных, иначе могут возникнуть ошибки. Например:</p>
+<pre><code class='language-rust'>
+fn main() {
+	let mut a = 10;
+	a = "hello"; // возникнет ошибка
+}
+</code></pre>
+<p>Мы не можем поменять тип данных, которые хранятся в переменной. Обычно типы данных указывают так:</p>
+<pre><code class='language-rust'>
+fn main() {
+	let mut a: i32 = 10;
+	a = 15;
+}
+</code></pre>
+
+			</div>
+		</div>
+
+		<footer>
+			<p>powered by <a href="https://github.com/alexeev-prog/zerobyte.css">zerobyte.css</a></p>
+			<p>Хочешь сменить тему? Выбери снизу!</p>
+			<button class="color-button carbon" onclick="changeTheme('carbon_colors')">Carbon</button>
+			<button class="color-button catppuccin" onclick="changeTheme('catppuccin_colors')">Catppuccin</button>
+			<button class="color-button gruvbox" onclick="changeTheme('gruvbox_colors')">Gruvbox</button>
+		</footer>
+	</div>
+
+	<script>hljs.highlightAll();</script>
+	<script src="js/script.js"></script>
+
+</body>
+</html>

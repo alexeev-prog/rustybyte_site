@@ -74,3 +74,28 @@ burger.onclick = function() {
 	burger.classList.toggle("closed");
 	menu.classList.toggle("opened");
 };
+
+function changeTheme(newClass) {
+    const htmlElement = document.documentElement; // Получаем тег HTML
+    htmlElement.classList.remove('carbon_colors', 'catppuccin_colors', 'gruvbox_colors'); // Удаляем все классы
+    htmlElement.classList.add(newClass); // Добавляем новый класс
+
+    // Меняем ссылку на CSS в зависимости от текущего класса
+    const themeLink = document.getElementById('theme-link');
+    if (newClass === 'catppuccin_colors') {
+        themeLink.href = 'css/catppuccin.css';
+    } else {
+        themeLink.href = 'css/gruvbox.css';
+    }
+
+    // Сохраняем выбранную тему в localStorage
+    localStorage.setItem('theme', newClass);
+}
+
+// При загрузке страницы восстанавливаем сохраненную тему
+window.onload = function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        changeTheme(savedTheme); // Применяем сохраненный класс
+    }
+};

@@ -122,6 +122,10 @@
     }
 }
 
+html {
+	transition: var(--trans-03);
+}
+
 *,
 *::before,
 *::after {
@@ -158,6 +162,41 @@ html {
 	scroll-behavior: smooth;
 	font-family: 'Roboto Serif', serif;
 	animation: fade-in .9s forwards;
+}
+
+.color-button {
+	background: var(--invert-bg-color);
+	color: var(--invert-fg-color);
+	cursor: pointer;
+	transition: var(--trans-03);
+	padding: 10px;
+	border-radius: 10px;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+.color-button.catppuccin {
+	background: #2e2e3e;
+	color: #cdd6f4;
+}
+
+.color-button.catppuccin:hover {
+	background: #cdd6f4;
+	color: #2e2e3e;
+}
+
+.color-button.gruvbox {
+	background: #1d2021;
+	color: #ebdbb2;
+}
+
+.color-button.gruvbox:hover {
+	background: #ebdbb2;
+	color: #1d2021;
+}
+
+.color-button:hover {
+	background: var(--invert-fg-color);
+	color: var(--invert-bg-color);
 }
 
 body {

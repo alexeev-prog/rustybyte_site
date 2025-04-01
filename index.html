@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/content.css">
 	<link rel="stylesheet" href="css/footer.css">
-	<link rel="stylesheet" href="css/gruvbox.css">
+	<link rel="stylesheet" href="css/gruvbox.css" id="theme-link">
 	<script src="js/highlight.min.js"></script>
 </head>
 <body>
@@ -49,7 +49,8 @@
 		<div class="sidebar">
 			<h3>Main</h3>
 			<ul>
-				<li class="active"><a href="/" class="active"><h4>Home</h4></a></li>
+				<li class="active"><a href="/" class="active"><h4>Главная</h4></a></li>
+				<li class="active"><a href="./variables.html"><h4>Переменные</h4></a></li>
 			</ul>
 		</div>
 
@@ -103,6 +104,10 @@
 
 		<footer>
 			<p>powered by <a href="https://github.com/alexeev-prog/zerobyte.css">zerobyte.css</a></p>
+			<p>Хочешь сменить тему? Выбери снизу!</p>
+			<button class="color-button carbon" onclick="changeTheme('carbon_colors')">Carbon</button>
+			<button class="color-button catppuccin" onclick="changeTheme('catppuccin_colors')">Catppuccin</button>
+			<button class="color-button gruvbox" onclick="changeTheme('gruvbox_colors')">Gruvbox</button>
 		</footer>
 	</div>
 
