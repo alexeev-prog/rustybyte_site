@@ -165,8 +165,8 @@ html {
 }
 
 .color-button {
-	background: var(--invert-bg-color);
-	color: var(--invert-fg-color);
+	background: #f4f4f4;
+	color: #111111;
 	cursor: pointer;
 	transition: var(--trans-03);
 	padding: 10px;
@@ -195,8 +195,8 @@ html {
 }
 
 .color-button:hover {
-	background: var(--invert-fg-color);
-	color: var(--invert-bg-color);
+	background: #111111;
+	color: #f4f4f4;
 }
 
 body {
